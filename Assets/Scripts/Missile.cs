@@ -12,13 +12,14 @@ public class Missile : MonoBehaviour, IMissile
     [SerializeField] private GameObject explosionPrefab;
     [SerializeField] private GameObject explosionColliderPrefab;
 
-    public void SetTarget(Vector3 targetPosition, float missileSpeed)
+    public void SetTarget(Vector3 targetPosition, float missileSpeed, int rotationSign)
     {
         target = targetPosition;
         speed = missileSpeed;
         isLaunched = true;
         targetRotation = Quaternion.LookRotation(target);
         Debug.Log("Missile Launched: Target Position = " + target + ", Speed = " + speed);
+        rotationSpeed = rotationSign * rotationSpeed;
     }
 
     private void Update()

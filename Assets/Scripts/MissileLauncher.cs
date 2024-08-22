@@ -38,7 +38,7 @@ public class MissileLauncher : MonoBehaviour
             GameObject missile = Instantiate(missilePrefab, launchPoint.position, missilePrefab.transform.rotation);
             //missiles.Add(missile);
             missile.transform.SetParent(launchPoint);
-            launchPointsStatus.Add(true); // ??? ????????? ???????? ? ??????
+            launchPointsStatus.Add(true);
         }
     }
 
@@ -65,18 +65,51 @@ public class MissileLauncher : MonoBehaviour
         {
             Transform selectedLaunchPoint = launchPoints[freeIndex];
 
-            if (selectedLaunchPoint.childCount > 0) // ?????????, ???? ?? ???????? ??????
+            if (selectedLaunchPoint.childCount > 0)
             {
                 GameObject missile = selectedLaunchPoint.GetChild(0).gameObject; // ???????? ?????? ???????? ??????
-                missile.transform.SetParent(null); // ??????????? ?????? ?? ???????? ?????????
+                missile.transform.SetParent(null);
 
                 IMissile missileScript = missile.GetComponent<Missile>();
                 if (missileScript != null)
                 {
-                    missileScript.SetTarget(targetPosition, missileSpeed); // ????????????? ???? ? ????????
+                    switch(freeIndex)
+                    {
+                        case 0:
+                            if(targetPosition.z <= - 1.208f)
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, 1);
+                            } else
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, -1);
+                            }
+                            break;
+                        case 1:
+                            if (targetPosition.z <= 0.52f)
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, 1);
+                            }
+                            else
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, -1);
+                            }
+                            break;
+                        case 2:
+                            if (targetPosition.z <= 2.496f)
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, 1);
+                            }
+                            else
+                            {
+                                missileScript.SetTarget(targetPosition, missileSpeed, -1);
+                            }
+                            break;
+
+                    }
+                    //missileScript.SetTarget(targetPosition, missileSpeed); // ????????????? ???? ? ????????
 
                     launchPointsStatus[freeIndex] = false;
-                    StartCoroutine(ReloadLaunchPoint(freeIndex)); // ???????? ???????????
+                    StartCoroutine(ReloadLaunchPoint(freeIndex));
                 }
                 else
                 {

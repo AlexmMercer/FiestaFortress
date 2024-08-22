@@ -1,8 +1,5 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp.dll:
-    - Missile
-    - MissileLauncher
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -27,6 +24,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -59,7 +57,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/MainMenuScene.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -68,19 +66,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 49
-      Script: {instanceID: 0}
-    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -95,9 +85,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2178}
     - Class: 114
-      Script: {instanceID: 2600}
+      Script: {instanceID: 2304}
     - Class: 114
-      Script: {instanceID: 2666}
+      Script: {instanceID: 2600}
     - Class: 114
       Script: {instanceID: 2804}
     - Class: 114
@@ -114,13 +104,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5704}
     - Class: 114
       Script: {instanceID: 6018}
-    - Class: 114
-      Script: {instanceID: 6566}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 136
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -1001,5 +987,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/MainMenuScene.unity
   playerPath: C:/Users/ogane/AntiAirClicker/Builds/Build1/AntiAirClicker.exe

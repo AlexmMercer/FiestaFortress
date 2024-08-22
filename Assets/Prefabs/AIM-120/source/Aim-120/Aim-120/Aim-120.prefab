@@ -90,6 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetReachedThreshold: 0.1
-  rotationSpeed: 30
+  rotationSpeed: 40
   explosionPrefab: {fileID: 0}
   explosionColliderPrefab: {fileID: 0}
